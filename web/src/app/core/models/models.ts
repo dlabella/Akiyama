@@ -39,6 +39,38 @@ export class InfoItem {
     ) { }
 }
 
+export interface AnimeResponse {
+    tv: Anime[]
+}
+
+export interface EpisodesResponse {
+    episodes: Episode[]
+}
+
+export interface SpecialsReponse {
+    special: Anime[]
+}
+
+export interface OvasResponse {
+    ova: Anime[]
+}
+
+export interface AnimeInfo {
+    info: Anime
+}
+
+
+export interface MoviesResponse {
+    movies: Anime[]
+}
+
+export interface SearchResponse {
+    search: Anime[]
+}
+
+export interface ServersResponse {
+    servers: Server[]
+}
 
 export enum Type {
     Anime,

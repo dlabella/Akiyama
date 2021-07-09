@@ -1,8 +1,10 @@
 import { catchError, map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Anime, Episode, Server } from '../../models/modelst';
+import { Anime, Episode, Server } from '../../models/models';
 import { DataService } from '../data.service';
+import { ApiProxyService } from '../api-proxy.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +18,9 @@ export class AnimeService extends DataService {
   movies = []
   episodes = []
 
+  constructor(private apiProxyService:ApiProxyService,protected http: HttpClient){
+    super(http);
+  }
 
   setAnimes(animes: Anime[]) {
     this.animes = animes
